@@ -1,0 +1,65 @@
+/* some style */
+
+.my-class {
+    background-color: red;
+}
+
+.ligne1{
+    color: black;
+    background-color: black;
+    border: black;
+    padding: 1px ;
+}
+
+.button1 {
+    height: 180px;
+    width: 196px;
+}
+.button2 {
+    height: 180px;
+    width: 197px;
+}
+.button3 {
+    height: 180px;
+    width: 197px;
+}
+
+.ligne2{
+    background-color: black;
+    padding: 1px;
+}
+
+.button2-1 {
+    height: 180px;
+    width: 196px;
+}
+
+.button2-2 {
+    height: 180px;
+    width: 197px;
+}
+
+.button2-3 {
+    height: 180px;
+    width: 197px;
+}
+
+.ligne3 { 
+    background-color: black;
+    padding: 1px;
+}
+
+.button3-1 {
+    height: 180px;
+    width: 196px;
+}
+
+.button3-2 {
+    height: 180px;
+    width: 197px;
+}
+
+.button3-3 {
+    height: 180px;
+    width: 197px;
+}
