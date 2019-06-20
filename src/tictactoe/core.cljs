@@ -71,39 +71,27 @@
    
    [:div.ligne2
       [:button.button2-1 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :milieu-gauche))}
+                        :on-click #(click-button state :milieu-gauche)}
      "Place here"]
     
     [:button.button2-2 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :milieu-milieu))}
+                        :on-click #(click-button state :milieu-milieu)}
      "Place here"]
     
     [:button.button2-3 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :milieu-droite))}
+                        :on-click #(click-button state :milieu-droite)}
      "Place here"]]
    
    
    [:div.ligne3
     [:button.button3-1 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :bas-gauche))}
+                        :on-click #(click-button state :bas-gauche)}
      "Place here"]
     [:button.button3-2 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :bas-milieu))}
+                        :on-click #(click-button state :bas-milieu)}
      "Place here"]
     [:button.button3-3 {:type "button"
-                        :on-click (fn [event]
-                                    (click-button state)
-                                    (swap! state assoc :button-clicked :bas-droite))}
+                        :on-click #(click-button state :bas-droite)}
      "Place here"]]])
 
 (defn my-content
