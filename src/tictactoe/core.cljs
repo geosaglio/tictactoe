@@ -3,6 +3,9 @@
 
 (enable-console-print!)
 
+(comment
+ (require '[tictactoe.core :refer [state]]))
+
 ;; define your app data so that it doesn't get over-written on reload
 
 ; (require '[tictactoe.core :refer [state]])
@@ -15,7 +18,7 @@
                                 :bas-gauche nil
                                 :bas-milieu nil
                                 :bas-droite nil}
-                      :turn :joueur-1}))
+                        :turn :joueur-1}))
 ; Lire : @state
 ; Ecrire : (swap! state assoc :text "Hello Geo")
 
@@ -40,37 +43,67 @@
       (change-turn state :joueur-2)
       (change-turn state :joueur-1))))
 
-(defn click-button-1
-  [state]
+(defn click-button
+  [state button-clicked]
+  (let [symbols {:joueur-1 :circle
+                 :joueur-2 :cross}
+        player (:turn @state)]
+    (swap! state update :board assoc button-clicked (player symbols)))
   (toggle-player-turn state))
+
 
 (defn body
   [state]
   [:div.ttleslignes
    [:div.ligne1
     [:button.button1 {:type "button"
-                      :on-click (fn [event]
-                                  (click-button-1 state))}
+                      :on-click #(click-button state :haut-gauche)}
      "Place here"]
-    [:button.button2 {:type "button"}
+
+    [:button.button2 {:type "button"
+                      :on-click #(click-button state :haut-milieu)}
      "Place here"]
-    [:button.button3 {:type "button"}
+
+    [:button.button3 {:type "button"
+                      :on-click #(click-button state :haut-droite)}
      "Place here"]]
-
-
+   
+   
    [:div.ligne2
-    [:button.button2-1 {:type "button"}
+      [:button.button2-1 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :milieu-gauche))}
      "Place here"]
-    [:button.button2-2 {:type "button"}
+    
+    [:button.button2-2 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :milieu-milieu))}
      "Place here"]
-    [:button.button2-3 {:type "button"}
+    
+    [:button.button2-3 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :milieu-droite))}
      "Place here"]]
+   
+   
    [:div.ligne3
-    [:button.button3-1 {:type "button"}
+    [:button.button3-1 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :bas-gauche))}
      "Place here"]
-    [:button.button3-2 {:type "button"}
+    [:button.button3-2 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :bas-milieu))}
      "Place here"]
-    [:button.button3-3 {:type "button"}
+    [:button.button3-3 {:type "button"
+                        :on-click (fn [event]
+                                    (click-button state)
+                                    (swap! state assoc :button-clicked :bas-droite))}
      "Place here"]]])
 
 (defn my-content
