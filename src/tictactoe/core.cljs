@@ -51,48 +51,30 @@
     (swap! state update :board assoc button-clicked (player symbols)))
   (toggle-player-turn state))
 
+(defn ttt-button
+  [state localization css]
+  [:button {:type "button"
+            :class css
+            :on-click #(click-button state localization)}
+   "Place here"])
 
 (defn body
   [state]
   [:div.ttleslignes
    [:div.ligne1
-    [:button.button1 {:type "button"
-                      :on-click #(click-button state :haut-gauche)}
-     "Place here"]
+    [ttt-button state :haut-gauche "button1"]
+    [ttt-button state :haut-milieu "button2"]
+    [ttt-button state :haut-droite "button3"]]
 
-    [:button.button2 {:type "button"
-                      :on-click #(click-button state :haut-milieu)}
-     "Place here"]
-
-    [:button.button3 {:type "button"
-                      :on-click #(click-button state :haut-droite)}
-     "Place here"]]
-   
-   
    [:div.ligne2
-      [:button.button2-1 {:type "button"
-                        :on-click #(click-button state :milieu-gauche)}
-     "Place here"]
-    
-    [:button.button2-2 {:type "button"
-                        :on-click #(click-button state :milieu-milieu)}
-     "Place here"]
-    
-    [:button.button2-3 {:type "button"
-                        :on-click #(click-button state :milieu-droite)}
-     "Place here"]]
-   
-   
+    [ttt-button state :milieu-gauche "button2-1"]
+    [ttt-button state :milieu-milieu "button2-2"]
+    [ttt-button state :milieu-droite "button2-3"]]
+
    [:div.ligne3
-    [:button.button3-1 {:type "button"
-                        :on-click #(click-button state :bas-gauche)}
-     "Place here"]
-    [:button.button3-2 {:type "button"
-                        :on-click #(click-button state :bas-milieu)}
-     "Place here"]
-    [:button.button3-3 {:type "button"
-                        :on-click #(click-button state :bas-droite)}
-     "Place here"]]])
+    [ttt-button state :bas-gauche "button3-1"]
+    [ttt-button state :bas-milieu "button3-2"]
+    [ttt-button state :bas-droite "button3-3"]]])
 
 (defn my-content
   [state]
