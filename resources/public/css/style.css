@@ -4,63 +4,34 @@
     background-color: red;
 }
 
-.ligne1{
-    color: black;
-    background-color: black;
-    border: black;
-    padding: 1px ;
+.restartbutton{
+    height: 60px;
+    width: 120px;
+    background-color: white;
+    border-color: black;
+    border-width: 5px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
 }
 
-.button1 {
-    height: 180px;
-    width: 196px;
-}
-.button2 {
-    height: 180px;
-    width: 197px;
-}
-.button3 {
-    height: 180px;
-    width: 197px;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 1px;
+    grid-column-gap: 1px;
+    /* height: 400px;
+    width: 100%; */
+
 }
 
-.ligne2{
-    background-color: black;
-    padding: 1px;
+.grid-item{
+    height: 100%;
+    width: 100%;
 }
 
-.button2-1 {
-    height: 180px;
-    width: 196px;
+.totale {
+    max-height: 300px;
+    max-width: 300px;
 }
-
-.button2-2 {
-    height: 180px;
-    width: 197px;
-}
-
-.button2-3 {
-    height: 180px;
-    width: 197px;
-}
-
-.ligne3 { 
-    background-color: black;
-    padding: 1px;
-}
-
-.button3-1 {
-    height: 180px;
-    width: 196px;
-}
-
-.button3-2 {
-    height: 180px;
-    width: 197px;
-}
-
-.button3-3 {
-    height: 180px;
-    width: 197px;
-}
-
